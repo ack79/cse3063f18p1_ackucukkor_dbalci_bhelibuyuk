@@ -22,3 +22,15 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /.metadata/
+.recommenders/caches/identified-project-coordinates.json
+.recommenders/caches/manual-mappings.json
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/_0.fdt
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/_0.fdx
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/_0.fnm
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/_0.frq
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/_0.nrm
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/_0.prx
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/_0.tii
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/_0.tis
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/segments.gen
+.recommenders/index/http___download_eclipse_org_recommenders_models_photon_/segments_1
