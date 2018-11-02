@@ -4,8 +4,8 @@ public class StartingPoint extends Sequare {
 
 	private Money bonus;
 	
-	public StartingPoint(String name, Money bonus) {
-		super(name);
+	public StartingPoint(String name, Money bonus, int id) {
+		super(name, id);
 		setBonus(bonus);
 	}
 

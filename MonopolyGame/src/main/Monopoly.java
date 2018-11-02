@@ -14,16 +14,19 @@ public class Monopoly {
 		
 		setNumberOfIteration(0); // default iteration is zero at the beginning.
 		
+		players = new Player[8];
+		
 		setDie1(new Die());
 		setDie2(new Die());
 	}
 	
 	public void play(Player player) {
-		//TODO funtion's details.
 	}
 	
-	public void addPlayerToGame(Player player) {
+	public void addPlayerToGame(Player player, int order) {
 		//TODO funtion's details.
+		players[order] = player;
+
 	}
 	
 	public void printState(Player player) {

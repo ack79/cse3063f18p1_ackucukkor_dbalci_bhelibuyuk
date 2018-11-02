@@ -5,9 +5,9 @@ public class Player {
 	private int round;
 	private Money budget;
 	
-	public Player(String name, int round, Money budget) {
+	public Player(String name, Money budget) {
 		setName(name);
-		setRound(round);
+		setRound(0);
 		setBudget(budget);
 	}
 

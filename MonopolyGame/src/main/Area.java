@@ -7,8 +7,8 @@ public class Area extends Sequare {
 	private Money priceForBuildHouses;
 	private int buildedHouses;
 	
-	public Area(String name, Money cost, Money rent, Money priceForBuildHouses) {
-		super(name);
+	public Area(String name, Money cost, Money rent, Money priceForBuildHouses, int id) {
+		super(name, id);
 		
 		setCost(cost);
 		setRent(rent);

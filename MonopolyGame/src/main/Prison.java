@@ -4,8 +4,8 @@ public class Prison extends Sequare {
 
 	private Money bail;
 
-	public Prison(String name, Money money) {
-		super(name);
+	public Prison(String name, Money money, int id) {
+		super(name,id);
 		setBail(money);
 		
 	}
