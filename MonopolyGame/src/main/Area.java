@@ -4,16 +4,14 @@ public class Area extends Sequare {
 
 	private Money cost;
 	private Money rent;
-	private Money priceForBuildHouses;
-	private int buildedHouses;
+	private Player owner;
 	
-	public Area(String name, Money cost, Money rent, Money priceForBuildHouses, int id) {
+	public Area(String name, Money cost, Money rent, int id) {
 		super(name, id);
 		
 		setCost(cost);
 		setRent(rent);
-		setPriceForBuildHouses(priceForBuildHouses);
-		setBuildedHouses(0);  //default builded houses is zero on an area
+
 
 	}
 
@@ -33,27 +31,20 @@ public class Area extends Sequare {
 		this.rent = rent;
 	}
 
-	public Money getPriceForBuildHouses() {
-		return priceForBuildHouses;
+	public Player getOwner() {
+		return owner;
 	}
 
-	public void setPriceForBuildHouses(Money priceForBuildHouses) {
-		this.priceForBuildHouses = priceForBuildHouses;
+	public void setOwner(Player owner) {
+		this.owner = owner;
 	}
 
-	public int getBuildedHouses() {
-		return buildedHouses;
-	}
 
-	public void setBuildedHouses(int buildedHouses) {
-		this.buildedHouses = buildedHouses;
-	}
+
+
+
+
 	
-	public int buildHouse(Player player) {
-		
-		//TODO: functions details
-		
-		return 1;
-	}
+
 
 }

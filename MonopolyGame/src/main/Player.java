@@ -2,12 +2,10 @@ package main;
 
 public class Player {
 	private String name;
-	private int round;
 	private Money budget;
 	
 	public Player(String name, Money budget) {
 		setName(name);
-		setRound(0);
 		setBudget(budget);
 	}
 
@@ -19,13 +17,7 @@ public class Player {
 		this.name = name;
 	}
 
-	public int getRound() {
-		return round;
-	}
 
-	public void setRound(int round) {
-		this.round = round;
-	}
 
 	public Money getBudget() {
 		return budget;
@@ -35,16 +27,23 @@ public class Player {
 		this.budget = budget;
 	}
 	
-	public void increaseBudget(Money money) {
+	public boolean increaseBudget(Money money) {
 		int newBudget = getBudget().getValue() + money.getValue();
 		setBudget(new Money(newBudget));
+		return true;
 	}
 	
-	public void decreaseBudget(Money money) {
+	public boolean decreaseBudget(Money money) {
+		
+		if(budget.getValue() < money.getValue()) {
+			return false;
+		}
 		
 		//TODO: If the user does not have enough money, the transaction cannot be made
 		
 		int newBudget = getBudget().getValue() - money.getValue();
 		setBudget(new Money(newBudget));
+		
+		return true;
 	}
 }

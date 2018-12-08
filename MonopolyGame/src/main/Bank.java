@@ -16,17 +16,24 @@ public class Bank {
 	}
 	
 	// The bank's money value is being increased.
-	public void deposit(Money money) {
+	public Boolean deposit(Money money) {
 		int newValue = this.money.getValue() + money.getValue();
 		this.money.setValue(newValue);
+		
+		return true;
 	}
 	
 	// The bank's money value is being decreased.
-	public void withdraw(Money money) {
+	public Boolean withdraw(Money money) {
 		
-		//TODO: If the bank does not have enough money, the transaction cannot be made
+		
+		if(money.getValue() > getMoney().getValue()) {
+			return false;
+		}
+		
 		
 		int newValue = this.money.getValue() - money.getValue();
 		this.money.setValue(newValue);
+		return true;
 	}
 }
