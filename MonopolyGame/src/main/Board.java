@@ -28,7 +28,7 @@ public class Board {
 		while ((line = br.readLine()) != null) {
 
 		   String [] parts = line.split(" ");
-		   
+		   		   
 		   int id = Integer.parseInt(parts[0]);
 		   
 		   if(id == 0) {
@@ -57,11 +57,6 @@ public class Board {
 			   String name = parts[1];
 			   this.sequares[id] = new Area(name, new Money(Integer.parseInt(parts[2])), new Money(Integer.parseInt(parts[3])), id);
 		   }
-		   
-		   
-		   
-		   String name = parts[1];
-		   this.sequares[id] = new Sequare(name, id);
 
 		}
 

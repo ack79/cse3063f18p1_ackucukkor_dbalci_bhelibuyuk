@@ -38,6 +38,7 @@ public class Player {
 	public boolean decreaseBudget(Money money) {
 		
 		if(budget.getValue() < money.getValue()) {
+			setBudget(new Money(0));
 			return false;
 		}
 		

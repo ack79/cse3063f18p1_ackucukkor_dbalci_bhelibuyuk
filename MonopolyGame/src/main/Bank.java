@@ -4,7 +4,7 @@ public class Bank {
 	private Money money;
 	
 	public Bank() {
-		setMoney(new Money(100000)); // The bank's initial value is 100000
+		setMoney(new Money(1000000)); // The bank's initial value is 100000
 	}
 
 	public Money getMoney() {

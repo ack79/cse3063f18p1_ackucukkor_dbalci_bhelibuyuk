@@ -19,8 +19,8 @@
 18 blackHouse3 1400 140
 19 blackHouse4 1400 140
 20 blackHouse5 1400 140
-21 train 750 75 100
-22 greenHouse2 750 75
+21 greenHouse2 750 75
+22 trains 750 75 100
 23 greenHouse3 750 75
 24 greenHouse4 750 75
 25 greenHouse5 750 75
