@@ -24,7 +24,7 @@ public class Main {
 		for(int i = 0; i < playerNumber; i++) {
 			System.out.print("What is the name of the "+ (i+1) +" player: ");
 			String name = scan.nextLine();
-			monopoly.addPlayerToGame(new Player(name,new Money(3000)),i);
+			monopoly.addPlayerToGame(new Player(name,new Money(10000)),i);
 		}
 		scan.close();
 		

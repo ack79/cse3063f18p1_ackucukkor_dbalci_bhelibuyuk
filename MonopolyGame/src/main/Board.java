@@ -30,6 +30,24 @@ public class Board {
 		   String [] parts = line.split(" ");
 		   
 		   int id = Integer.parseInt(parts[0]); 
+		   if(id == 0) {
+			   //starting point
+		   }
+		   else if(id == 9) {
+			   //prison
+		   }
+		   else if(id == 15 || id == 27) {
+			   //luck
+		   }
+		   else if(id == 14 || id == 22 || id == 36) {
+			   //goverment
+		   }
+		   else {
+			   
+		   }
+		   
+		   
+		   
 		   String name = parts[1];
 		   this.sequares[id] = new Sequare(name, id);
 
