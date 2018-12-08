@@ -4,9 +4,9 @@ public class Goverment extends Area {
 
 	private Money tax;
 	
-	public Goverment(String name, Money cost, Money rent, Money priceForBuildHouses, int id) {
+	public Goverment(String name, Money cost, Money rent, int id, Money tax) {
 		super(name, cost, rent, id);
-		
+		setTax(tax);
 	}
 
 	public Money getTax() {

@@ -29,21 +29,33 @@ public class Board {
 
 		   String [] parts = line.split(" ");
 		   
-		   int id = Integer.parseInt(parts[0]); 
+		   int id = Integer.parseInt(parts[0]);
+		   
 		   if(id == 0) {
 			   //starting point
+			   String name = parts[1];
+			   this.sequares[id] = new StartingPoint(name, new Money(Integer.parseInt(parts[2])), id);
+			   
 		   }
 		   else if(id == 9) {
 			   //prison
+			   String name = parts[1];
+			   this.sequares[id] = new Prison(name, new Money(Integer.parseInt(parts[2])), id);
 		   }
 		   else if(id == 15 || id == 27) {
 			   //luck
+			   String name = parts[1];
+			   this.sequares[id] = new Luck(name, id);
 		   }
 		   else if(id == 14 || id == 22 || id == 36) {
 			   //goverment
+			   String name = parts[1];
+			   this.sequares[id] = new Goverment(name, new Money(Integer.parseInt(parts[2])), new Money(Integer.parseInt(parts[3])), id, new Money(Integer.parseInt(parts[4])));
+		   
 		   }
 		   else {
-			   
+			   String name = parts[1];
+			   this.sequares[id] = new Area(name, new Money(Integer.parseInt(parts[2])), new Money(Integer.parseInt(parts[3])), id);
 		   }
 		   
 		   

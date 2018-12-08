@@ -12,14 +12,14 @@
 11 grayHouse2 1250 125
 12 grayHouse3 1250 125
 13 grayHouse4 1250 125
-14 grayHouse5 1250 125
+14 electric 1250 125 200
 15 luck
 16 blackHouse1 1400 140
 17 blackHouse2 1400 140
 18 blackHouse3 1400 140
 19 blackHouse4 1400 140
 20 blackHouse5 1400 140
-21 greenHouse1 750 75
+21 train 750 75 100
 22 greenHouse2 750 75
 23 greenHouse3 750 75
 24 greenHouse4 750 75
@@ -34,7 +34,7 @@
 33 whiteHouse3 2250 225
 34 whiteHouse4 2250 225
 35 redHouse1 1500 150
-36 redHouse2 1500 150
+36 water 1500 150 125
 37 redHouse3 1500 150
 38 redHouse4 1500 150
 39 redHouse5 1500 150
