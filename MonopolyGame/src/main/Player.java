@@ -3,10 +3,12 @@ package main;
 public class Player {
 	private String name;
 	private Money budget;
+	private int position;
 	
 	public Player(String name, Money budget) {
 		setName(name);
 		setBudget(budget);
+		setPosition(0);
 	}
 
 	public String getName() {
@@ -45,5 +47,13 @@ public class Player {
 		setBudget(new Money(newBudget));
 		
 		return true;
+	}
+
+	public int getPosition() {
+		return position;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
 	}
 }

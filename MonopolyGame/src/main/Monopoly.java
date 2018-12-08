@@ -3,7 +3,7 @@ package main;
 public class Monopoly {
 	private Player[] players;
 	private Board board;
-	private Player currentPlayer;
+	private int order;
 	private int numberOfIteration;
 	private Die die1;
 	private Die die2;
@@ -20,17 +20,24 @@ public class Monopoly {
 		setDie2(new Die());
 	}
 	
+	public void play() {
+		
+	}
+	
 	public void play(Player player) {
+	
 	}
 	
 	public void addPlayerToGame(Player player, int order) {
-		//TODO funtion's details.
-		players[order] = player;
+			players[order] = player;
 
 	}
 	
-	public void printState(Player player) {
-		//TODO funtion's details.
+	public String printState(Player player) {
+		String state = "Player: " + player.getName() + "\n";
+		state += "Position: " + player.getPosition() + "\n";
+		state += "Budget: " + player.getBudget().getValue() + "\n";
+		return state;
 	}
 
 	public int getNumberOfIteration() {
@@ -57,14 +64,6 @@ public class Monopoly {
 		this.die1 = die1;
 	}
 
-	public Player getCurrentPlayer() {
-		return currentPlayer;
-	}
-
-	public void setCurrentPlayer(Player currentPlayer) {
-		this.currentPlayer = currentPlayer;
-	}
-
 	public Board getBoard() {
 		return board;
 	}
@@ -79,6 +78,14 @@ public class Monopoly {
 
 	public void setPlayers(Player[] players) {
 		this.players = players;
+	}
+
+	public int getOrder() {
+		return order;
+	}
+
+	public void setOrder(int order) {
+		this.order = order;
 	}
 	
 
