@@ -1,7 +1,10 @@
 package main;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Monopoly {
@@ -26,6 +29,7 @@ public class Monopoly {
 		
 		File file = new File("src/main/sequare.txt");
 		getBoard().installBoard(file);
+		printFile("--- Game Was Created ---");
 		
 		Scanner scan = new Scanner(System.in);
 		System.out.print("How many players do you want (at least 2 player): ");
@@ -42,19 +46,23 @@ public class Monopoly {
 		}
 		scan.close();
 		
+		printFile("--- Players were Created ---");
+
+		printFile("\n--- Game starts. ---\n\n");
+
 		int i = 1;
 		while(true) {
 			
-			System.out.println("Iteration: " + i + "\n");
+			printFile("Iteration: " + i + "\n");
 			
 			for(int j=0; j < players.length; j++) {
 				
-				System.out.println(players[j].getName() + " is playing. \n");
-				System.out.println("Position before roll the dies:" + players[j].getPosition() + "\n");
+				printFile("\n" + players[j].getName() + " is playing.");
+				printFile("Position before roll the dies:" + players[j].getPosition());
 				
 				play(players[j]);
 				
-				System.out.println("Position after roll the dies:" + players[j].getPosition() + "\n");
+				printFile("Position after roll the dies:" + players[j].getPosition() );
 
 			}
 			
@@ -62,7 +70,7 @@ public class Monopoly {
 				System.out.println("END GAME");
 				break;
 			}
-			System.out.println("\n\n\n\n\n\n");
+			printFile("\n\n\n");
 			i++;
 		}
 		
@@ -82,50 +90,51 @@ public class Monopoly {
 		if(player.getPosition() >= 39) {
 			player.setPosition(player.getPosition() % 39);
 			player.increaseBudget(((StartingPoint)getBoard().getSequares()[0]).getBonus());
-			System.out.println(player.getName() + " passed through the starting point.\n");
+			printFile(player.getName() + " passed through the starting point.");
 		}
 		
 		Sequare current = getBoard().getSequares()[player.getPosition()];
 				
 		if(current instanceof Prison) {
 			player.decreaseBudget(((Prison) current).getBail());
-			System.out.println(player.getName() + " paid prison bail.\n");
+			printFile(player.getName() + " paid prison bail.");
 		}
 		else if(current instanceof Luck) {
 			player.increaseBudget(((Luck) current).getLuckCard());
-			System.out.println(player.getName() + " took luck card.\n");
+			printFile(player.getName() + " took luck card.");
 
 		}
 		else if(current instanceof Goverment) {
 			player.decreaseBudget(((Goverment) current).getTax());
-			System.out.println(player.getName() + " paid tax. \n");
+			printFile(player.getName() + " paid tax.");
 
 			
 			if(((Goverment) current).getOwner() == null && player.getBudget().getValue() >= ((Goverment) current).getCost().getValue()) {
 				((Goverment) current).setOwner(player);
 				player.decreaseBudget(((Goverment) current).getCost());
 				
-				System.out.println(player.getName() + " buyed " + ((Goverment) current).getName() +"\n");
+				printFile(player.getName() + " buyed " + ((Goverment) current).getName());
 
 			}
 			else if(((Goverment) current).getOwner() != null && ((Goverment) current).getOwner() != player) {
 				((Goverment) current).getOwner().increaseBudget(((Goverment) current).getRent());
 				player.decreaseBudget(((Goverment) current).getRent());
-				System.out.println(player.getName() + " paid rent. \n");
-				
+				printFile(player.getName() + " paid rent.");
+
 			}
 		}
 		else if(current instanceof Area) {
 			if(((Area) current).getOwner() == null && player.getBudget().getValue() > ((Area) current).getCost().getValue()) {
 				((Area) current).setOwner(player);
 				player.decreaseBudget(((Area) current).getCost());
-				System.out.println(player.getName() + " buyed " + ((Area) current).getName() +"\n");
+				printFile(player.getName() + " buyed " + ((Area) current).getName());
 
 			}
 			else if(((Area) current).getOwner() != null && ((Area) current).getOwner() != player) {
 				((Area) current).getOwner().increaseBudget(((Area) current).getRent());
 				player.decreaseBudget(((Area) current).getRent());
-				System.out.println(player.getName() + " paid rent. \n");
+				printFile(player.getName() + " paid rent.");
+
 			}
 		}
 		
@@ -202,5 +211,17 @@ public class Monopoly {
 		this.order = order;
 	}
 	
+	public void printFile(String s) {
+		try(FileWriter fw = new FileWriter("output.txt", true);
+			    BufferedWriter bw = new BufferedWriter(fw);
+			    PrintWriter out = new PrintWriter(bw)){
+			    
+			out.println(s);
+
+			    
+			} catch (IOException e) {
+			    System.out.println(e.getMessage());
+			}
+	}
 
 }
